@@ -1,0 +1,31 @@
+﻿<Window x:Class="GigALoanWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="College"
+        WindowStartupLocation="CenterScreen"
+        Width ="500" Height="300"
+        >
+
+    <StackPanel Orientation="Vertical">
+        <TextBlock 
+            Text="Alerts:" 
+            FontSize="16" 
+            HorizontalAlignment="Left" 
+            FontStyle="Normal"
+            />
+
+        <ListView ItemsSource="{Binding Alerts}"
+                      Height="400"
+                      >
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock FontSize="32" Text="{Binding Title}" />
+                        <TextBlock FontSize="10" Margin="10,0,0,0" Text="{Binding AlertID}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListView>
+    </StackPanel>
+
+</Window>
